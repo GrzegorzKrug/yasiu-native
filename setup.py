@@ -3,11 +3,12 @@ from yasiu import VERSION
 
 
 project_urls = {
-        "Time Package": "https://pypi.org/project/yasiu.time/",
-        "Math Package": "https://pypi.org/project/yasiu.math/",
-        "Image Package": "https://pypi.org/project/yasiu.image/",
+        "1. Time Package": "https://pypi.org/project/yasiu-time/",
+        "2. Math Package": "https://pypi.org/project/yasiu-math/",
+        "3. Image Package": "https://pypi.org/project/yasiu-image/",
+        "4. Visualisation Package": "https://pypi.org/project/yasiu-vis/",
 
-        "Source repo": "https://github.com/GrzegorzKrug/yasiu.time",
+        "5. Source repo": "https://github.com/GrzegorzKrug/yasiu.time",
 }
 
 classifiers = [
