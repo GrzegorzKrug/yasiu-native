@@ -1,14 +1,14 @@
 from setuptools import setup
-from yasiu import VERSION
+from yasiu_native import VERSION
 
 
 project_urls = {
-        "1. Time Package": "https://pypi.org/project/yasiu-time/",
+        "1. Native Package": "https://pypi.org/project/yasiu-native/",
         "2. Math Package": "https://pypi.org/project/yasiu-math/",
         "3. Image Package": "https://pypi.org/project/yasiu-image/",
         "4. Visualisation Package": "https://pypi.org/project/yasiu-vis/",
 
-        "5. Source repo": "https://github.com/GrzegorzKrug/yasiu.time",
+        "5. Source repo": "https://github.com/GrzegorzKrug/yasiu-native",
 }
 
 classifiers = [
@@ -32,12 +32,13 @@ keywords = [
         "time",
         "timeit",
         "measure time",
+        "decorators"
 ]
 
 author = "Grzegorz Krug"
 author_email = "kruggrzegorz@gmail.com"
 
-description = "Time decorators. Console timers."
+description = "Native utilities based only on python builtins. Timers, Decorators."
 readme_path = "README.md"
 
 with open(readme_path, "rt") as file:
@@ -48,7 +49,7 @@ install_requires = [
 ]
 
 setup(
-        name='yasiu.time',
+        name='yasiu-native',
         version=".".join([str(num) for num in VERSION]),
         author=author,
         author_email=author_email,

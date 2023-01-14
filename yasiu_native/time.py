@@ -1,8 +1,7 @@
-import time
-
-from functools import wraps
+from yasiu_native.decorators import flexible_decorator_2d as _flex_dec_2d
 
 
+@_flex_dec_2d
 def measure_perf_time_decorator(fmt=">4.1f"):
     """
     Example:
@@ -20,6 +19,8 @@ def measure_perf_time_decorator(fmt=">4.1f"):
     Returns:
 
     """
+    from functools import wraps
+    import time
 
     def decorator(fun):
         @wraps(wrapped=fun)
@@ -44,6 +45,7 @@ def measure_perf_time_decorator(fmt=">4.1f"):
     return decorator
 
 
+@_flex_dec_2d
 def measure_real_time_decorator(fmt=">4.1f"):
     """
     Example:
@@ -61,6 +63,8 @@ def measure_real_time_decorator(fmt=">4.1f"):
     Returns:
 
     """
+    from functools import wraps
+    import time
 
     def decorator(fun):
         @wraps(wrapped=fun)
@@ -88,14 +92,4 @@ def measure_real_time_decorator(fmt=">4.1f"):
 __all__ = ['measure_perf_time_decorator', 'measure_real_time_decorator']
 
 if __name__ == "__main__":
-    def fun(N=10000000):
-        a = [0] * 10
-        for x in range(N):
-            a[x % 5] = x * 3.5
-
-
-    fun1 = measure_real_time_decorator()(fun)
-    fun2 = measure_perf_time_decorator()(fun)
-
-    fun1()
-    fun2()
+    pass
