@@ -42,7 +42,7 @@ def func():
 
 ### Print buffering will impact your performance!
 
-- Use with cauction for multiple function calls
+- Use with caution for multiple function calls
 
 ## Flexible decorator
 

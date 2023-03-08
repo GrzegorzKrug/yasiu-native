@@ -36,7 +36,7 @@ def measure_perf_time_decorator(fmt=">4.1f"):
                 timeend = f"{dur * 1000:{fmt}} ms"
             else:
                 timeend = f"{dur:{fmt}} s"
-            print(f"{fun.__name__} perf exec time: {timeend}: ")
+            print(f"{fun.__name__} perf exec time: {timeend}.")
 
             return res
 
@@ -80,7 +80,7 @@ def measure_real_time_decorator(fmt=">4.1f"):
                 timeend = f"{dur * 1000:{fmt}} ms"
             else:
                 timeend = f"{dur:{fmt}} s"
-            print(f"{fun.__name__} real exec time: {timeend}: ")
+            print(f"{fun.__name__} real exec time: {timeend}.")
 
             return res
 
