@@ -14,7 +14,7 @@ def measure_perf_time_decorator(fmt=">4.1f"):
             ...
 
     Args:
-        fmt: string
+        fmt: string format (PEP 3101)
 
     Returns:
 
@@ -34,6 +34,12 @@ def measure_perf_time_decorator(fmt=">4.1f"):
                 timeend = f"{dur * 1000000:{fmt}} us"
             elif dur < 1:
                 timeend = f"{dur * 1000:{fmt}} ms"
+            elif dur > 90:
+                "Minutes"
+                timeend = f"{dur / 60:{fmt}} min"
+            elif dur > (60*60):
+                "Hours"
+                timeend = f"{dur / 60 / 60:{fmt}} h"
             else:
                 timeend = f"{dur:{fmt}} s"
             print(f"{fun.__name__} perf exec time: {timeend}.")
@@ -58,7 +64,7 @@ def measure_real_time_decorator(fmt=">4.1f"):
             ...
 
     Args:
-        fmt: string
+        fmt: string format (PEP 3101)
 
     Returns:
 
@@ -78,6 +84,12 @@ def measure_real_time_decorator(fmt=">4.1f"):
                 timeend = f"{dur * 1000000:{fmt}} us"
             elif dur < 1:
                 timeend = f"{dur * 1000:{fmt}} ms"
+            elif dur > 90:
+                "Minutes"
+                timeend = f"{dur / 60:{fmt}} min"
+            elif dur > (60*60):
+                "Hours"
+                timeend = f"{dur / 60 / 60:{fmt}} h"
             else:
                 timeend = f"{dur:{fmt}} s"
             print(f"{fun.__name__} real exec time: {timeend}.")
