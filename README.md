@@ -78,7 +78,7 @@ def test_2():
 def test_3(b=0):
     pass
 
-@custom_decorator(a=1)
+@custom_decorator(decorParamA=1, decorParamB=2)
 def test_3(b=0):
     pass
 
