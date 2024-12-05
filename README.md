@@ -1,6 +1,6 @@
 # Readme of `yasiu-native`
 
-Module with useful measure time decorators.
+Module has time measuring decorators and flexible decorators.
 
 ## Installation
 
@@ -10,14 +10,16 @@ pip install yasiu-native
 
 ## Time decorators
 
+Decorators for measuring time with formatter.
+
 - **measure_perf_time_decorator**
 
-  decorator that measures time using *time.perf_counter*
+  decorator that measures function execution time using *time.perf_counter*
 
 
 - **measure_real_time_decorator**
 
-  decorator that measures time using *time.time*
+  decorator that measures function execution time using *time.time*
 
 ### Measuring time
 
