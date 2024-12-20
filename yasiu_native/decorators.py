@@ -1,4 +1,4 @@
-from functools import update_wrapper
+from functools import update_wrapper as _update_wrapper
 
 
 def flexible_decorator(decorator):
@@ -68,12 +68,12 @@ def flexible_decorator(decorator):
         if callable(fun1):
             "Decorated without calling () in decoration"
             "No arguments were used during"
-            decorWrapped = update_wrapper(decorator, fun1)
+            decorWrapped = _update_wrapper(decorator, fun1)
             return decorWrapped(fun1)
 
         def inner(fun2, ):
             ""
-            decorWrapped = update_wrapper(decorator, fun2)
+            decorWrapped = _update_wrapper(decorator, fun2)
             ret = decorWrapped(fun2, *args, **kw)  # (*a2, **kw2)
             return ret
 
@@ -152,11 +152,11 @@ def flexible_decorator_2d(decorator):
         if callable(fun1):
             "Decorated without calling () in decoration"
             "No arguments were used during"
-            decorWrapped = update_wrapper(decorator, fun1)
+            decorWrapped = _update_wrapper(decorator, fun1)
             return decorWrapped()(fun1)
 
         def inner(fun2, ):
-            decorWrapped = update_wrapper(decorator, fun2)
+            decorWrapped = _update_wrapper(decorator, fun2)
             ret = decorWrapped(*args, **kw)(fun2)
 
             return ret
