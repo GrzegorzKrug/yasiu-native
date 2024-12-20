@@ -1,50 +1,17 @@
 # Readme of `yasiu-native`
 
-Module has time measuring decorators and flexible decorators.
 
 ## Installation
 
 ```shell
 pip install yasiu-native
 ```
+## Contains
 
-## Time decorators
+Module has plenty useful decorators.
 
-Decorators for measuring time with formatter.
-
-- **measure_perf_time_decorator**
-
-  decorator that measures function execution time using *time.perf_counter*
-
-
-- **measure_real_time_decorator**
-
-  decorator that measures function execution time using *time.time*
-
-### Measuring time
-
-```py
-from yasiu_native.time import measure_perf_time_decorator
-
-
-@measure_perf_time_decorator()
-def func():
-    ...
-
-
-@measure_perf_time_decorator(">4.1f")
-def func():
-    ...
-
-
-@measure_perf_time_decorator(fmt=">4.1f")
-def func():
-    ...
-```
-
-### Print buffering will impact your performance!
-
-- Use with caution for multiple function calls
+ - Flexible decorators
+ - Time decorators
 
 ## Flexible decorator
 
@@ -57,7 +24,7 @@ Decorators wrapped with `Flexible` can be used both with `()` and without `()` o
 
 ### Example with one level parametrized decorator.
 ```python
-from yasiu_native.decorators import flexible_decorator, flexible_decorator_2d
+from yasiu_native.decorators import flexible_decorator
 
 
 @flexible_decorator
@@ -87,7 +54,7 @@ def test_3(b=0):
 ```
 ### Example with 2 level decorator
 ```python
-from yasiu_native.decorators import flexible_decorator, flexible_decorator_2d
+from yasiu_native.decorators import flexible_decorator_2d
 
 @flexible_decorator_2d
 def custom_decorator(*posParam, **keyParam):
@@ -106,6 +73,49 @@ def custom_decorator(*posParam, **keyParam):
         return inner
     return wrapper
 ```
+
+## Time decorators
+
+Decorators for measuring time with formatter.
+
+- **measure_perf_time_decorator**
+
+  decorator that measures function execution time using *time.perf_counter*
+
+
+- **measure_real_time_decorator**
+
+  decorator that measures function execution time using *time.time*
+
+#### Measuring time
+
+```py
+from yasiu_native.time import measure_perf_time_decorator
+
+
+@measure_perf_time_decorator()
+def func():
+    ...
+
+
+@measure_perf_time_decorator(">4.1f")
+def func():
+    ...
+
+
+@measure_perf_time_decorator(fmt=">4.1f")
+def func():
+    ...
+
+"Example output:" # Function <name> executed in 3min
+"Example output:" # Function <name> executed in 40.2s
+"Example output:" # Function <name> executed in 10.2ms
+```
+
+#### Print buffering will impact your performance!
+
+- Use with caution for multiple function calls
+
 
 ## Console execution timer
 
